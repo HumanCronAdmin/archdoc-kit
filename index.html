@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArchDoc Kit — Software Architecture Documentation in Notion</title>
+<meta name="description" content="A living Notion system that keeps your software architecture documented and discoverable. 5 connected databases for systems, services, APIs, decisions, and diagrams.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1N5PR9Y0H"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-H1N5PR9Y0H');</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.6}
+.container{max-width:960px;margin:0 auto;padding:0 20px}
+a{color:#06B6D4;text-decoration:none}
+.btn{display:inline-block;background:#06B6D4;color:#0f172a;font-weight:700;padding:14px 32px;border-radius:8px;font-size:1.1rem;min-height:44px;min-width:44px;transition:opacity .2s}
+.btn:hover{opacity:.85}
+header{padding:20px 0;border-bottom:1px solid #1e293b}
+.hero{padding:80px 0 60px;text-align:center}
+.hero h1{font-size:2rem;font-weight:700;color:#f8fafc;margin-bottom:16px;line-height:1.2}
+.hero p{font-size:1.15rem;color:#94a3b8;max-width:600px;margin:0 auto 32px}
+.section{padding:60px 0}
+.section h2{font-size:1.5rem;font-weight:700;color:#f8fafc;margin-bottom:12px}
+.section .sub{color:#94a3b8;margin-bottom:32px;font-size:1.05rem}
+.card{background:#1e293b;border-radius:12px;padding:24px;margin-bottom:16px}
+.card h3{color:#06B6D4;font-size:1.1rem;margin-bottom:8px}
+.card p{color:#94a3b8;font-size:.95rem}
+.connected{background:#1e293b;border-radius:12px;padding:32px;text-align:center;border:1px solid #06B6D4}
+.connected .flow{color:#06B6D4;font-size:1.1rem;margin-top:12px;font-weight:600}
+.audience-grid,.pricing-grid{display:grid;gap:16px}
+.pricing-card{background:#1e293b;border-radius:12px;padding:32px;text-align:center}
+.pricing-card h3{font-size:1.3rem;color:#f8fafc}
+.pricing-card .price{font-size:2.5rem;font-weight:700;color:#06B6D4;margin:12px 0}
+.pricing-card ul{list-style:none;text-align:left;margin:16px 0 24px;color:#94a3b8}
+.pricing-card ul li{padding:6px 0;padding-left:24px;position:relative}
+.pricing-card ul li::before{content:"✓";color:#06B6D4;position:absolute;left:0;font-weight:700}
+.pricing-card.featured{border:2px solid #06B6D4}
+.faq-item{border-bottom:1px solid #1e293b;padding:20px 0}
+.faq-item h3{color:#f8fafc;font-size:1rem;margin-bottom:8px}
+.faq-item p{color:#94a3b8;font-size:.95rem}
+.email-section{text-align:center;padding:60px 0}
+.email-section h2{font-size:1.5rem;color:#f8fafc;margin-bottom:8px}
+.email-section p{color:#94a3b8;margin-bottom:24px}
+footer{border-top:1px solid #1e293b;padding:24px 0;text-align:center;color:#64748b;font-size:.85rem}
+@media(min-width:480px){
+ .hero h1{font-size:2.8rem}
+ .pricing-grid{grid-template-columns:1fr 1fr}
+ .audience-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<header><div class="container"><strong style="color:#06B6D4;font-size:1.2rem">ArchDoc Kit</strong></div></header>
+
+<section class="hero"><div class="container">
+<h1>Your architecture docs are outdated. Again.</h1>
+<p>A living Notion system that keeps your software architecture documented and discoverable.</p>
+<a href="#" class="btn">Get ArchDoc Kit — $49</a>
+</div></section>
+
+<section class="section"><div class="container">
+<h2>Sound familiar?</h2>
+<p class="sub">Confluence pages nobody reads. Diagrams from 2 years ago. New devs asking "how does this work?" every week.</p>
+<p style="color:#94a3b8">Architecture knowledge shouldn't live in one person's head. ArchDoc Kit gives your team a single source of truth that actually stays current — because it's built into the tool you already use.</p>
+</div></section>
+
+<section class="section"><div class="container">
+<h2>What's inside</h2>
+<p class="sub">5 databases, all connected. Drop it into your Notion workspace and start documenting in minutes.</p>
+<div id="databases"></div>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="connected">
+<h2>Everything is connected</h2>
+<p style="color:#94a3b8;margin-top:8px">Click a System → see its Services → see their APIs → read the decisions behind them.</p>
+<p class="flow">System → Services → API Endpoints → Decisions → Diagrams</p>
+</div>
+</div></section>
+
+<section class="section"><div class="container">
+<h2>Built for</h2>
+<div class="audience-grid" id="audience"></div>
+</div></section>
+
+<section class="section"><div class="container">
+<h2>Simple pricing</h2>
+<p class="sub">One purchase. Lifetime updates.</p>
+<div class="pricing-grid" id="pricing"></div>
+</div></section>
+
+<section class="section"><div class="container">
+<h2>FAQ</h2>
+<div id="faq"></div>
+</div></section>
+
+<section class="section" style="text-align:center"><div class="container">
+<h2>Ready to fix your architecture docs?</h2>
+<p class="sub">Stop losing knowledge every time someone leaves the team.</p>
+<a href="#" class="btn">Get ArchDoc Kit — $49</a>
+</div></section>
+
+<section class="email-section"><div class="container">
+<h2>Get updates on new templates</h2>
+<p>No spam. Just useful Notion templates for dev teams.</p>
+<form action="https://buttondown.com/api/emails/embed-subscribe/japandevtools" method="post" target="popupwindow" style="display:flex;gap:8px;max-width:420px;margin:0 auto;flex-wrap:wrap;justify-content:center">
+<input type="email" name="email" placeholder="you@company.com" required style="flex:1;min-width:200px;padding:12px 16px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;font-size:1rem;min-height:44px">
+<button type="submit" class="btn" style="border:none;cursor:pointer">Subscribe</button>
+</form>
+</div></section>
+
+<footer><div class="container">
+<p>ArchDoc Kit · <a href="https://github.com/humancronadmin">GitHub</a></p>
+</div></footer>
+
+<script>
+const databases=[
+{t:"Systems DB",d:"What's running and where. Map every system in your stack with status, environment, and ownership."},
+{t:"Services DB",d:"Each service, its owner, status, and dependencies. Know who owns what at a glance."},
+{t:"API Endpoints DB",d:"Every route documented with method, auth requirements, and description. No more Slack-searching for endpoints."},
+{t:"Architecture Decisions DB",d:'"Why did we choose Redis?" Every decision with context, date, and the alternatives you considered.'},
+{t:"Diagrams DB",d:"Embedded Excalidraw and Mermaid diagrams linked directly to the systems they describe."}
+];
+const audience=[
+{t:"Tech Leads",d:"Keep your team aligned without repeating yourself."},
+{t:"CTOs",d:"Get a bird's-eye view of your entire architecture."},
+{t:"Solution Architects",d:"Document decisions so future-you understands past-you."},
+{t:"Growing Dev Teams",d:"Onboard new engineers in days, not weeks."}
+];
+const pricing=[
+{t:"Individual",p:"$49",f:["Full 5-database template","Lifetime updates","Personal & freelance use"],feat:false},
+{t:"Team",p:"$99",f:["Everything in Individual","Duplicate for your whole team","Priority support","Commercial use license"],feat:true}
+];
+const faqs=[
+{q:"Do I need Notion paid plan?",a:"No. ArchDoc Kit works on Notion's free plan. You just need a Notion account."},
+{q:"Can I customize the databases?",a:"Absolutely. It's a Notion template — add properties, views, filters, whatever your team needs."},
+{q:"What if my team already has some docs?",a:"Great. Import your existing docs into the databases. The connected structure will make them 10x more useful."},
+{q:"Is there a refund policy?",a:"Yes. If ArchDoc Kit doesn't work for your team, email within 14 days for a full refund."}
+];
+function r(id,items,fn){document.getElementById(id).innerHTML=items.map(fn).join('')}
+r('databases',databases,i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p></div>`);
+r('audience',audience,i=>`<div class="card"><h3>${i.t}</h3><p>${i.d}</p></div>`);
+r('pricing',pricing,i=>`<div class="pricing-card${i.feat?' featured':''}"><h3>${i.t}</h3><div class="price">${i.p}</div><ul>${i.f.map(f=>`<li>${f}</li>`).join('')}</ul><a href="#" class="btn">Get ${i.t}</a></div>`);
+r('faq',faqs,i=>`<div class="faq-item"><h3>${i.q}</h3><p>${i.a}</p></div>`);
+</script>
+</body>
+</html>
